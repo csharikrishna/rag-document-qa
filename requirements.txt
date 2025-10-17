@@ -1,0 +1,16 @@
+langchain
+langchain-google-genai
+chromadb
+fastapi
+uvicorn
+streamlit
+pypdf
+python-multipart
+pydantic-settings
+python-dotenv
+pytest
+pytest-asyncio
+pytest-cov
+pytest-mock
+httpx
+reportlab  # For creating test PDFs
