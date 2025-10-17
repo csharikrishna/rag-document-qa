@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     
     # API Keys
     GEMINI_API_KEY: str
-    
+
     # Database paths
     CHROMA_PERSIST_DIR: str = "./data/chroma_db"
     UPLOAD_DIR: str = "./data/uploaded_docs"
@@ -25,10 +25,18 @@ class Settings(BaseSettings):
     
     # API settings
     MAX_UPLOAD_SIZE: int = 10 * 1024 * 1024  # 10MB
-    
+
+    # --- Added to fix Render validation errors ---
+    API_URL: str = "http://localhost:8000"
+    MAX_FILE_SIZE_MB: int = 10
+    REQUEST_TIMEOUT: int = 30
+    UPLOAD_TIMEOUT: int = 60
+    # ------------------------------------------------
+
     class Config:
         env_file = ".env"
         case_sensitive = True
+        extra = "ignore"  # ensures extra env vars won’t crash the app
 
 
 @lru_cache()
